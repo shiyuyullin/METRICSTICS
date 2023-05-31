@@ -37,6 +37,15 @@ public class CustomArrayList<E> {
 	}
 	
 	/**
+	 * Get element at given index
+	 * @param index int for index to retrieve
+	 * @return an element
+	 */
+	public E get(int index) {
+		return list[index];
+	}
+	
+	/**
 	 * Get the size of the list, the number of elements in the list.
 	 * @return an int
 	 */
