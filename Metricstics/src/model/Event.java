@@ -32,11 +32,16 @@ public class Event {
 	 * Allows attributes of Event to be read-only once finalized, but modifiable before that.
 	 * Alternative is having a constructor, but that's not scalable, since the number of arguments could change.
 	 */
-	public class EventBuilder {
+	public static class EventBuilder {
 		private double[] inputs;
 		private double mean;
 		private int inputCount;
 		
+		/**
+		 * Set (or reset) the expected input size.
+		 * @param size internal size of input array
+		 * @return this eventBuilder
+		 */
 		public EventBuilder resetInputSize(int size) {
 			inputs = new double[size];
 			inputCount = 0;
@@ -47,10 +52,20 @@ public class Event {
 		 * Add additional inputs to the end. Returns itself for method chaining.
 		 * MUST call resetInputSize() first (to create the array).
 		 * @param input a double
-		 * @return this eventBuilder.
+		 * @return this eventBuilder
 		 */
 		public EventBuilder addInput(double input) {
 			inputs[inputCount++] = input;
+			return this;
+		}
+		
+		/**
+		 * Overwrites the inputs to the given array.
+		 * @param inputs array of doubles
+		 * @return this eventBuilder
+		 */
+		public EventBuilder setInput(double[] inputs) {
+			this.inputs = inputs;
 			return this;
 		}
 

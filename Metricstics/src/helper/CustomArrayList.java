@@ -33,9 +33,24 @@ public class CustomArrayList<E> {
 		if(size >= list.length) {
 			expandCapacity();
 		}
+		//add element and increment size.
 		list[size++] = element;
 	}
-	
+
+	/**
+	 * Get all elements in list as array.
+	 * @return array of elements
+	 */
+	public E[] getAll() {
+		//create sized array.
+		@SuppressWarnings("unchecked")
+		final E[] newList = (E[]) new Object[size];
+		//transfer elements.
+		for(int i = 0; i < size; i++) {
+			newList[i] = list[i];
+		}
+		return newList;
+	}
 	/**
 	 * Get element at given index
 	 * @param index int for index to retrieve
@@ -66,5 +81,22 @@ public class CustomArrayList<E> {
 		}
 		//overwrite the old.
 		list = newList;
+	}
+	
+	/**
+	 * Convert a CustomArrayList\<Double\> into a double[].
+	 * @param customArrayDouble CustomArrayList\<Double\> to convert
+	 * @return a double[] with the same values as passed in the argument
+	 */
+	public static double[] toPrimitiveDoubleArray(CustomArrayList<Double> customArrayDouble) {
+		final Object[] innerArray = customArrayDouble.getAll();
+		final double[] convertedArray = new double[customArrayDouble.size];
+		int valuesLeft = convertedArray.length;
+		//copy over all elements.
+		while(valuesLeft-- > 0) {
+			convertedArray[valuesLeft] = (double) innerArray[valuesLeft];
+		}
+		
+		return convertedArray;
 	}
 }

@@ -4,11 +4,13 @@ import helper.CustomArrayList;
 
 /**
  * Observer pattern. Propagate changes through a tree via a chain of update calls.
+ * Can hold a value and array of values as output of a computation.
  */
 public abstract class ComputeObserver {
 	private final CustomArrayList<ComputeObserver> observers;
 	protected Event event;
 	protected double outputValue;
+	protected double[] outputArray;
 	
 	public ComputeObserver() {
 		observers = new CustomArrayList<ComputeObserver>();
@@ -32,11 +34,18 @@ public abstract class ComputeObserver {
 	}
 	
 	/**
-	 * Get the associate output value to this computer.
+	 * Get the associated output value to this computer.
 	 * @return a double as output
 	 */
 	public double getOutputValue() {
 		return outputValue;
+	}
+	/**
+	 * Get the associated output array to this computer.
+	 * @return an array of double as output
+	 */
+	public double[] getOutputArray() {
+		return outputArray;
 	}
 	
 	/**

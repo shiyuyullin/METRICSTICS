@@ -1,0 +1,64 @@
+package model;
+
+import helper.CustomArrayList;
+import helper.CustomMath;
+
+/**
+ * Computation carries the minimum.
+ */
+public class ComputeMode extends ComputeObserver {
+	/**
+	 * Update the maximum value.
+	 * Assumes a sorted input list.
+	 */
+	@Override
+	public void update(Event event) {
+		outputArray = CustomArrayList.toPrimitiveDoubleArray(findMode(event.getInputs()));
+		
+		this.event = event;
+		updateObservers();
+	}
+	
+	private CustomArrayList<Double> findMode(double[] inputs) {
+		final CustomMath math = CustomMath.getInstance();
+		CustomArrayList<Double> modes = new CustomArrayList<Double>();
+		int currentStreak = 0;
+		int maxStreak = 0;
+		int currentIndex = inputs.length;
+		double currentNumber;
+		double previousNumber = inputs[inputs.length - 1];
+		while(currentIndex-- > 0) {
+			//alias
+			currentNumber = inputs[currentIndex];
+			
+			//Check against the previous currentNumber to know whether the streak has ended.
+//			if(currentNumber != previousNumber) {
+//				currentStreak = 0;
+//			}
+//			currentStreak++;
+			//Branchless alternative.
+			final int isOnNextNumber = math.oneIfGreaterThanElseZero(previousNumber, currentNumber);
+			//Reset streak count on next number.
+			currentStreak *= 1^isOnNextNumber;
+			currentStreak++;
+			
+			//Reset modes when not the most frequent.
+			//Update the max streak count.
+//			maxStreak = math.maximum(maxStreak, currentStreak);
+			if(currentStreak > maxStreak) {
+				 modes = new CustomArrayList<Double>();
+				 maxStreak = currentStreak;
+			}
+			//Track tied modes.
+			if(currentStreak == maxStreak) {
+				modes.add(currentNumber);
+			}
+			
+			//update previous number
+			previousNumber = currentNumber;
+		}
+		
+		return modes;
+	}
+
+}
