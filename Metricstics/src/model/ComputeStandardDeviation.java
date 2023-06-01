@@ -17,7 +17,7 @@ public class ComputeStandardDeviation extends ComputeObserver {
 		//Mathematical definition.
 		double sum = 0;
 		for(double input : inputs) {
-			final double deviation = CustomMath.getInstance().absoluteValue(input-mean);
+			final double deviation = input-mean;
 			sum += deviation*deviation;
 		}
 		outputValue = CustomMath.getInstance().squareRoot(sum/inputs.length);

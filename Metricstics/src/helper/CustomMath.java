@@ -118,8 +118,8 @@ public class CustomMath {
 		//Refine the guess iteratively until a threshold of accuracy is met.
 		// Or until the guess loops on itself.
 		while(absoluteValue(a - guess*guess) >= threshold && guess != previousGuess) {
-			guess = (guess+a/guess)/2;
 			previousGuess = guess;
+			guess = (guess+a/guess)/2;
 		}
 		return guess;
 	}
