@@ -38,6 +38,21 @@ public class Event {
 		private int inputCount;
 		
 		/**
+		 * Default constructor.
+		 */
+		public EventBuilder() {
+			
+		}
+		/**
+		 * Copy constructor.
+		 * @param event event to copy from
+		 */
+		public EventBuilder(Event event) {
+			inputs = event.inputs;
+			mean   = event.mean  ;
+		}
+		
+		/**
 		 * Set (or reset) the expected input size.
 		 * @param size internal size of input array
 		 * @return this eventBuilder

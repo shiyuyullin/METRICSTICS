@@ -93,4 +93,34 @@ public class CustomMath {
 		//Note that a^b^a = b and 0^a = a. So apply the aforementioned bit mask to a^b.
 		return (a-b)>>(Integer.SIZE-1) & (a^b)^a;
 	}
+	
+	/**
+	 * Find an approximated square root.
+	 * @param a a double
+	 * @return the square root
+	 */
+	public double squareRoot(double a) {
+		final double defaultAccuracyThreshold = Double.MIN_NORMAL;
+		return squareRoot(a, defaultAccuracyThreshold);
+	}
+	/**
+	 * Find an approximated square root. Up to a computational accuracy threshold to the squared value.
+	 * (Since squared doubles aren't as precise, the threshold is not representative of significant figures.)
+	 * @param a a double
+	 * @param threshold accuracy threshold
+	 * @return the square root
+	 */
+	public double squareRoot(double a, double threshold) {
+		//Solve numerically by following Babylonian method/Heron's method, equivalent to Newton's method.
+		//Set an initial guess.
+		double guess = a/2;
+		double previousGuess=a;
+		//Refine the guess iteratively until a threshold of accuracy is met.
+		// Or until the guess loops on itself.
+		while(absoluteValue(a - guess*guess) >= threshold && guess != previousGuess) {
+			guess = (guess+a/guess)/2;
+			previousGuess = guess;
+		}
+		return guess;
+	}
 }
