@@ -24,10 +24,9 @@ public class ComputeMode extends ComputeObserver {
 		CustomArrayList<Double> modes = new CustomArrayList<Double>();
 		int currentStreak = 0;
 		int maxStreak = 0;
-		int currentIndex = inputs.length;
 		double currentNumber;
 		double previousNumber = inputs[inputs.length - 1];
-		while(currentIndex-- > 0) {
+		for(int currentIndex = 0; currentIndex < inputs.length; currentIndex++, previousNumber = currentNumber) {
 			//alias
 			currentNumber = inputs[currentIndex];
 			
@@ -37,7 +36,7 @@ public class ComputeMode extends ComputeObserver {
 //			}
 //			currentStreak++;
 			//Branchless alternative.
-			final int isOnNextNumber = math.oneIfGreaterThanElseZero(previousNumber, currentNumber);
+			final int isOnNextNumber = math.oneIfGreaterThanElseZero(currentNumber, previousNumber);
 			//Reset streak count on next number.
 			currentStreak *= 1^isOnNextNumber;
 			currentStreak++;
@@ -53,9 +52,6 @@ public class ComputeMode extends ComputeObserver {
 			if(currentStreak == maxStreak) {
 				modes.add(currentNumber);
 			}
-			
-			//update previous number
-			previousNumber = currentNumber;
 		}
 		
 		return modes;
