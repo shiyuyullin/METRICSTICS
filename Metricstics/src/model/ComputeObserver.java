@@ -20,7 +20,7 @@ public abstract class ComputeObserver {
 	 * Add to list of observers.
 	 * @param observer an observer to add
 	 */
-	public void addOberserver(ComputeObserver observer) {
+	public void addObserver(ComputeObserver observer) {
 		observers.add(observer);
 	}
 	

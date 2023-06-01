@@ -35,13 +35,13 @@ public class Demo {
 		ComputeObserver stdev   = new ComputeStandardDeviation();
 		
 		//Attach Observer chain.
-		head.addOberserver(minimum);
-		head.addOberserver(maximum);
-		head.addOberserver(mode   );
-		head.addOberserver(median );
-		head.addOberserver(mean   );
-		mean.addOberserver(mad    );
-		mean.addOberserver(stdev  );
+		head.addObserver(minimum);
+		head.addObserver(maximum);
+		head.addObserver(mode   );
+		head.addObserver(median );
+		head.addObserver(mean   );
+		mean.addObserver(mad    );
+		mean.addObserver(stdev  );
 		
 		//Deliver input.
 		head.update(inputEvent);
