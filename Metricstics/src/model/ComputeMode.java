@@ -4,11 +4,11 @@ import helper.CustomArrayList;
 import helper.CustomMath;
 
 /**
- * Computation carries the minimum.
+ * Computation carries the mode.
  */
 public class ComputeMode extends ComputeObserver {
 	/**
-	 * Update the maximum value.
+	 * Update the mode value.
 	 * Assumes a sorted input list.
 	 */
 	@Override

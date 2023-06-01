@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Computation carries the minimum.
+ * Computation carries the maximum.
  */
 public class ComputeMaximum extends ComputeObserver {
 	/**
