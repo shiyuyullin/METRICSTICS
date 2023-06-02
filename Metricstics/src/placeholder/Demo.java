@@ -1,5 +1,8 @@
 package placeholder;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import model.ComputeEmpty;
 import model.ComputeMaximum;
 import model.ComputeMean;
@@ -21,8 +24,8 @@ public class Demo {
 	 */
 	public static void main(String[] args) {
 		//Get the input. Pretend it gets sorted in ascending order.
-		double[] inputs = new double[] {123.45, 234.56, 234.56, 345.45, 345.67, 345.67};
-		final Event inputEvent = new Event.EventBuilder().setInput(inputs).build();
+		List<Double> inputs = List.of(123.45, 234.56, 234.56, 345.45, 345.67, 345.67);
+		final Event inputEvent = new Event.EventBuilder().setInputs(inputs).build();
 		
 		//Initialize the modules.
 		ComputeObserver head    = new ComputeEmpty();
@@ -49,22 +52,10 @@ public class Demo {
 		//Retrieve/Display output.
 		System.out.println("min :" + minimum.getOutputValue());
 		System.out.println("max :" + maximum.getOutputValue());
-		printModesln(mode.getOutputArray());
+		System.out.println("mode:" + mode.getOutputList().stream().map(String::valueOf).collect(Collectors.joining(", ")));
 		System.out.println("med :" + median .getOutputValue());
 		System.out.println("mean:" + mean   .getOutputValue());
 		System.out.println("mad :" + mad    .getOutputValue());
 		System.out.println("std :" + stdev  .getOutputValue());
-	}
-	
-	/**
-	 * Print out double[] for modes.
-	 * @param arr double array
-	 */
-	private static void printModesln(double[] arr) {
-		System.out.print("mode:");
-		for(double d : arr) {
-			System.out.print(d + ", ");
-		}
-		System.out.println();
 	}
 }

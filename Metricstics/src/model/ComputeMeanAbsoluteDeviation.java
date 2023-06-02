@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 import helper.CustomMath;
 
 /**
@@ -12,16 +14,15 @@ public class ComputeMeanAbsoluteDeviation extends ComputeObserver {
 	 */
 	@Override
 	public void update(Event event) {
-		final double[] inputs = event.getInputs();
-		final double   mean   = event.getMean()  ;
-		double sum = 0;
-		for(double input : inputs) {
-			sum += CustomMath.getInstance().absoluteValue(input-mean);
-		}
-		outputValue = sum/inputs.length;
+		final List<Double> inputs = event.getInputs();
+		final double       mean   = event.getMean()  ;
+		final double zero = 0;
+		final double sum = inputs.stream()
+				.map(input -> input-mean)
+				.map(CustomMath.getInstance()::absoluteValue)
+				.reduce(zero, Double::sum);
+		outputValue = sum/inputs.size();
 		
-		this.event = event;
-		updateObservers();
+		updateObservers(event);
 	}
-
 }

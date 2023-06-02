@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 /**
  * Computation carries the mean.
  */
@@ -10,15 +12,13 @@ public class ComputeMean extends ComputeObserver {
 	 */
 	@Override
 	public void update(Event event) {
-		final double[] inputs = event.getInputs();
-		double sum = 0;
-		for(double input : inputs) {
-			sum += input;
-		}
-		outputValue = sum/inputs.length;
+		final List<Double> inputs = event.getInputs();
+		final double zero = 0;
+		final double sum = inputs.stream()
+				.reduce(zero, Double::sum);
+		outputValue = sum/inputs.size();
 		
-		this.event = new Event.EventBuilder(event).setMean(outputValue).build();
-		updateObservers();
+		final Event meanEvent = new Event.EventBuilder(event).setMean(outputValue).build();
+		updateObservers(meanEvent);
 	}
-
 }
