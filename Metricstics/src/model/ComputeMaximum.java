@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 /**
  * Computation carries the maximum.
  */
@@ -10,12 +12,10 @@ public class ComputeMaximum extends ComputeObserver {
 	 */
 	@Override
 	public void update(Event event) {
-		final double[] inputs = event.getInputs();
-		final int lastIndex = inputs.length - 1;
-		outputValue = inputs[lastIndex];
+		final List<Double> inputs = event.getInputs();
+		final int lastIndex = inputs.size() - 1;
+		outputValue = inputs.get(lastIndex);
 		
-		this.event = event;
-		updateObservers();
+		updateObservers(event);
 	}
-
 }

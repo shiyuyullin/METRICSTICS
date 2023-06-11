@@ -10,8 +10,6 @@ public class ComputeEmpty extends ComputeObserver {
 	 */
 	@Override
 	public void update(Event event) {
-		this.event = event;
-		updateObservers();
+		updateObservers(event);
 	}
-
 }

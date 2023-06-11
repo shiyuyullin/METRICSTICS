@@ -10,10 +10,10 @@ public class ComputeMinimum extends ComputeObserver {
 	 */
 	@Override
 	public void update(Event event) {
-		outputValue = event.getInputs()[0];
-
-		this.event = event;
-		updateObservers();
+		final int first = 0;
+		outputValue = event.getInputs().get(first);
+		
+		updateObservers(event);
 	}
 
 }

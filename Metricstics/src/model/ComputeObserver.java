@@ -1,19 +1,19 @@
 package model;
 
-import helper.CustomArrayList;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Observer pattern. Propagate changes through a tree via a chain of update calls.
- * Can hold a value and array of values as output of a computation.
+ * Can hold a value and list of values as output of a computation.
  */
 public abstract class ComputeObserver {
-	private final CustomArrayList<ComputeObserver> observers;
-	protected Event event;
+	private final List<ComputeObserver> observers;
 	protected double outputValue;
-	protected double[] outputArray;
+	protected List<Double> outputList;
 	
 	public ComputeObserver() {
-		observers = new CustomArrayList<ComputeObserver>();
+		observers = new ArrayList<ComputeObserver>();
 	}
 	
 	/**
@@ -26,11 +26,10 @@ public abstract class ComputeObserver {
 	
 	/**
 	 * Update all observers in list.
+	 * @param event event to propagate
 	 */
-	public void updateObservers() {
-		for(int i = observers.getSize() - 1; i >= 0; i--) {
-			observers.get(i).update(event);
-		}
+	public void updateObservers(Event event) {
+		observers.forEach(observer -> observer.update(event));
 	}
 	
 	/**
@@ -40,12 +39,13 @@ public abstract class ComputeObserver {
 	public double getOutputValue() {
 		return outputValue;
 	}
+	
 	/**
-	 * Get the associated output array to this computer.
-	 * @return an array of double as output
+	 * Get the associated output list to this computer.
+	 * @return an double list as output
 	 */
-	public double[] getOutputArray() {
-		return outputArray;
+	public List<Double> getOutputList() {
+		return outputList;
 	}
 	
 	/**

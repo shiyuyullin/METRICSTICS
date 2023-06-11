@@ -1,10 +1,12 @@
 package model;
 
+import java.util.List;
+
 /**
  * The Event class carries details that observers send each other as attributes.
  */
 public class Event {
-	private final double[] inputs;
+	private final List<Double> inputs;
 	private final double   mean;
 	private Event(EventBuilder eventBuilder) {
 		inputs = eventBuilder.inputs;
@@ -13,10 +15,10 @@ public class Event {
 	
 	/**
 	 * Gives the input associated to this event.
-	 * @return a double array
+	 * @return a double List
 	 */
-	public double[] getInputs() {
-		return inputs.clone();
+	public List<Double> getInputs() {
+		return inputs;
 	}
 	
 	/**
@@ -30,12 +32,11 @@ public class Event {
 	/**
 	 * Builder pattern for Event. 
 	 * Allows attributes of Event to be read-only once finalized, but modifiable before that.
-	 * Alternative is having a constructor, but that's not scalable, since the number of arguments could change.
+	 * Alternative is having a constructor instead of a Builder, but that's not scalable, since the number of arguments could change.
 	 */
 	public static class EventBuilder {
-		private double[] inputs;
+		private List<Double> inputs;
 		private double mean;
-		private int inputCount;
 		
 		/**
 		 * Default constructor.
@@ -53,39 +54,27 @@ public class Event {
 		}
 		
 		/**
-		 * Set (or reset) the expected input size.
-		 * @param size internal size of input array
-		 * @return this eventBuilder
-		 */
-		public EventBuilder resetInputSize(int size) {
-			inputs = new double[size];
-			inputCount = 0;
-			return this;
-		}
-		
-		/**
 		 * Add additional inputs to the end. Returns itself for method chaining.
-		 * MUST call resetInputSize() first (to create the array).
 		 * @param input a double
 		 * @return this eventBuilder
 		 */
 		public EventBuilder addInput(double input) {
-			inputs[inputCount++] = input;
+			inputs.add(input);
 			return this;
 		}
 		
 		/**
-		 * Overwrites the inputs to the given array.
+		 * Overwrites the inputs to the given array. Returns itself for method chaining.
 		 * @param inputs array of doubles
 		 * @return this eventBuilder
 		 */
-		public EventBuilder setInput(double[] inputs) {
+		public EventBuilder setInputs(List<Double> inputs) {
 			this.inputs = inputs;
 			return this;
 		}
 
 		/**
-		 * Sets the mean value of the event.
+		 * Sets the mean value of the event. Returns itself for method chaining.
 		 * @param mean a double
 		 * @return this eventBuilder
 		 */

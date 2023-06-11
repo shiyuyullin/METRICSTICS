@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 /**
  * Computation carries the median.
  */
@@ -10,15 +12,15 @@ public class ComputeMedian extends ComputeObserver {
 	 */
 	@Override
 	public void update(Event event) {
-		final double[] inputs = event.getInputs();
+		final List<Double> inputs = event.getInputs();
+		final int inputSize = inputs.size();
 		//integer divide to floor automatically.
-		final int firstMiddleIndex = (inputs.length-1)/2;
-		final int secondMiddleIndex = inputs.length/2;
+		final int firstMiddleIndex = (inputSize-1)/2;
+		final int secondMiddleIndex = inputSize/2;
 		//pick mean of both middles. On odd case, pick mean of two of itself.
-		outputValue = (inputs[firstMiddleIndex]+inputs[secondMiddleIndex])/2;
+		outputValue = (inputs.get(firstMiddleIndex)+inputs.get(secondMiddleIndex))/2;
 		
-		this.event = event;
-		updateObservers();
+		updateObservers(event);
 	}
 
 }

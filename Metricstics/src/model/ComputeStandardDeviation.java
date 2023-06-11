@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 import helper.CustomMath;
 
 /**
@@ -12,18 +14,16 @@ public class ComputeStandardDeviation extends ComputeObserver {
 	 */
 	@Override
 	public void update(Event event) {
-		final double[] inputs = event.getInputs();
-		final double   mean   = event.getMean()  ;
+		final List<Double> inputs = event.getInputs();
+		final double       mean   = event.getMean();
 		//Mathematical definition.
-		double sum = 0;
-		for(double input : inputs) {
-			final double deviation = input-mean;
-			sum += deviation*deviation;
-		}
-		outputValue = CustomMath.getInstance().squareRoot(sum/inputs.length);
+		final double zero = 0;
+		final double sumOfSquaredDeviation = inputs.stream()
+				.map(input -> input - mean)
+				.map(deviation -> deviation * deviation)
+				.reduce(zero, Double::sum);
+		outputValue = CustomMath.getInstance().squareRoot(sumOfSquaredDeviation/inputs.size());
 		
-		this.event = event;
-		updateObservers();
+		updateObservers(event);
 	}
-
 }
