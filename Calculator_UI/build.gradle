@@ -62,12 +62,12 @@ jlinkZip {
   group = 'distribution'
 }
 
-jar {
-  duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
-  manifest {
-    attributes 'Main-Class': 'calculator.ui.App'
-  }
-  from {
-    configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-  }
-}
+//jar {
+//  duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+//  manifest {
+//    attributes 'Main-Class': 'calculator.ui.App'
+//  }
+//  from {
+//    configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+//  }
+//}
