@@ -11,6 +11,7 @@ import model.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Controller {
 
@@ -133,7 +134,7 @@ public class Controller {
         switch (action) {
             case "Min" -> mainDisplay.setText("Min: " + minimum.getOutputValue());
             case "Max" -> mainDisplay.setText("Max: " + maximum.getOutputValue());
-            case "Mode" -> mainDisplay.setText("Mode: " + mode.getOutputValue());
+            case "Mode" -> mainDisplay.setText("Mode: " + mode.getOutputList().stream().map(String::valueOf).collect(Collectors.joining(", ")));
             case "Mean" -> mainDisplay.setText("Mean: " + mean.getOutputValue());
             case "Median" -> mainDisplay.setText("Median: " + median.getOutputValue());
             case "Stdev" -> mainDisplay.setText("Stdev: " + stdev.getOutputValue());
