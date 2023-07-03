@@ -6,8 +6,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
+import model.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Controller {
@@ -18,6 +20,38 @@ public class Controller {
     private List<Double> inputs;
 
     private String action;
+
+    ComputeObserver head;
+    ComputeObserver minimum;
+    ComputeObserver maximum;
+    ComputeObserver mode;
+    ComputeObserver median;
+    ComputeObserver mean;
+    ComputeObserver mad;
+    ComputeObserver stdev;
+
+    // This method will be called after the application is initialized (started)
+    @FXML
+    public void initialize(){
+        //Initialize the modules.
+        head = new ComputeEmpty();
+        minimum = new ComputeMinimum();
+        maximum = new ComputeMaximum();
+        mode = new ComputeMode();
+        median = new ComputeMedian();
+        mean = new ComputeMean();
+        mad = new ComputeMeanAbsoluteDeviation();
+        stdev = new ComputeStandardDeviation();
+
+        //Attach Observer chain.
+        head.addObserver(minimum);
+        head.addObserver(maximum);
+        head.addObserver(mode);
+        head.addObserver(median);
+        head.addObserver(mean);
+        mean.addObserver(mad);
+        mean.addObserver(stdev);
+    }
 
     public void insertNumber(String number) {
         mainDisplay.setText(mainDisplay.getText() + number);
@@ -88,8 +122,27 @@ public class Controller {
                 continue;
             }
         }
+        // sorting in ascending order
+        inputs.sort(Comparator.comparing(Double::doubleValue));
         for(Double d : inputs){
             System.out.println(d);
         }
+        Event inputEvent = new Event.EventBuilder().setInputs(inputs).build();
+        //Deliver input.
+        head.update(inputEvent);
+        switch (action) {
+            case "Min" -> mainDisplay.setText("Min: " + minimum.getOutputValue());
+            case "Max" -> mainDisplay.setText("Max: " + maximum.getOutputValue());
+            case "Mode" -> mainDisplay.setText("Mode: " + mode.getOutputValue());
+            case "Mean" -> mainDisplay.setText("Mean: " + mean.getOutputValue());
+            case "Median" -> mainDisplay.setText("Median: " + median.getOutputValue());
+            case "Stdev" -> mainDisplay.setText("Stdev: " + stdev.getOutputValue());
+            case "Mad" -> mainDisplay.setText("Mad: " + mad.getOutputValue());
+        }
+    }
+
+    public void onFunctionClick(MouseEvent mouseEvent){
+        Button funtionButton = (Button) mouseEvent.getSource();
+        action = funtionButton.getText();
     }
 }
