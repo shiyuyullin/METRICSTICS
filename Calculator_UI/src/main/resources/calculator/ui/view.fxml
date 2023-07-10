@@ -10,7 +10,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.ui.Controller">
   <children>
-      <TextArea fx:id="mainDisplay" layoutX="36.0" layoutY="8.0" prefHeight="131.0" prefWidth="442.0" wrapText="true">
+      <TextArea fx:id="mainDisplay" layoutX="38.0" layoutY="79.0" prefHeight="60.0" prefWidth="442.0" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextArea>
+      <TextArea fx:id="resultDisplay" layoutX="38.0" layoutY="14.0" prefHeight="60.0" prefWidth="287.0" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>

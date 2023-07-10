@@ -17,6 +17,8 @@ public class Controller {
 
     @FXML
     private TextArea mainDisplay;
+    @FXML
+    private TextArea resultDisplay;
 
     private List<Double> inputs;
 
@@ -52,6 +54,9 @@ public class Controller {
         head.addObserver(mean);
         mean.addObserver(mad);
         mean.addObserver(stdev);
+
+        // make the window for displaying results read-only
+        resultDisplay.setEditable(false);
     }
 
     public void insertNumber(String number) {
@@ -96,6 +101,7 @@ public class Controller {
 
     public void onClearClick(MouseEvent mouseEvent){
         mainDisplay.setText("");
+        resultDisplay.setText("");
     }
 
     public void onDotClick(MouseEvent mouseEvent){
@@ -120,7 +126,6 @@ public class Controller {
             }
             catch (NumberFormatException e){
                 System.out.println("skipping");
-                continue;
             }
         }
         // sorting in ascending order
@@ -128,17 +133,19 @@ public class Controller {
         for(Double d : inputs){
             System.out.println(d);
         }
+        // Clearing mainDisplay
+        mainDisplay.setText("");
         Event inputEvent = new Event.EventBuilder().setInputs(inputs).build();
         //Deliver input.
         head.update(inputEvent);
         switch (action) {
-            case "Min" -> mainDisplay.setText("Min: " + minimum.getOutputValue());
-            case "Max" -> mainDisplay.setText("Max: " + maximum.getOutputValue());
-            case "Mode" -> mainDisplay.setText("Mode: " + mode.getOutputList().stream().map(String::valueOf).collect(Collectors.joining(", ")));
-            case "Mean" -> mainDisplay.setText("Mean: " + mean.getOutputValue());
-            case "Median" -> mainDisplay.setText("Median: " + median.getOutputValue());
-            case "Stdev" -> mainDisplay.setText("Stdev: " + stdev.getOutputValue());
-            case "Mad" -> mainDisplay.setText("Mad: " + mad.getOutputValue());
+            case "Min" -> resultDisplay.setText("Min: " + minimum.getOutputValue());
+            case "Max" -> resultDisplay.setText("Max: " + maximum.getOutputValue());
+            case "Mode" -> resultDisplay.setText("Mode: " + mode.getOutputList().stream().map(String::valueOf).collect(Collectors.joining(", ")));
+            case "Mean" -> resultDisplay.setText("Mean: " + mean.getOutputValue());
+            case "Median" -> resultDisplay.setText("Median: " + median.getOutputValue());
+            case "Stdev" -> resultDisplay.setText("Stdev: " + stdev.getOutputValue());
+            case "Mad" -> resultDisplay.setText("Mad: " + mad.getOutputValue());
         }
     }
 
