@@ -1,8 +1,10 @@
 package placeholder;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import helper.RandomValueGenerator;
 import model.ComputeEmpty;
 import model.ComputeMaximum;
 import model.ComputeMean;
@@ -17,14 +19,17 @@ import model.Event;
 /**
  * Demonstrates Compute cases.
  */
-public class Demo {
+public class Test {
 	/**
 	 * Displays statistical numbers based on hard-coded input.
 	 * @param args unused
 	 */
 	public static void main(String[] args) {
 		//Get the input. Pretend it gets sorted in ascending order.
-		List<Double> inputs = List.of(123.45, 234.56, 234.56, 345.45, 345.67, 345.67);
+//		List<Double> inputs = List.of(123.45, 234.56, 234.56, 345.45, 345.67, 345.67);
+		List<Double> inputs = RandomValueGenerator.generateRandomDoubles(1000, 0.0, 1000.0);
+		inputs.sort(Comparator.comparing(Double::doubleValue));
+		System.out.println("Test dataset size: " + inputs.size());
 		final Event inputEvent = new Event.EventBuilder().setInputs(inputs).build();
 		
 		//Initialize the modules.
