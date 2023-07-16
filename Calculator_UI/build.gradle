@@ -25,12 +25,12 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-  mainModule = 'calculator.ui'
-  mainClass = 'calculator.ui.HelloApplication'
+  mainModule = 'frontend.calculator.ui'
+  mainClass = 'frontend.calculator.ui.HelloApplication'
 }
 
 javafx {
-  version = '17.0.6'
+  version = '20.0.1'
   modules = ['javafx.controls', 'javafx.fxml']
 }
 
@@ -43,7 +43,6 @@ dependencies {
 
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
-  implementation(project(':Metricstics'))
 
 }
 

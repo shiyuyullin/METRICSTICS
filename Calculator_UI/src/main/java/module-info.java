@@ -5,8 +5,7 @@ module calculator.ui {
         requires org.controlsfx.controls;
             requires com.dlsc.formsfx;
                     requires org.kordamp.bootstrapfx.core;
-    requires Metricstics;
 
-    opens calculator.ui to javafx.fxml;
-    exports calculator.ui;
+    opens frontend.calculator.ui to javafx.fxml;
+    exports frontend.calculator.ui;
 }
