@@ -59,18 +59,6 @@ public class Controller {
         resultDisplay.setEditable(false);
     }
 
-    public void insertNumber(String number) {
-        mainDisplay.setText(mainDisplay.getText() + number);
-    }
-
-    public void insertSpace(){
-        mainDisplay.setText(mainDisplay.getText() + DELIMITER);
-    }
-
-    public void insertDot(){
-        mainDisplay.setText(mainDisplay.getText() + ".");
-    }
-
     public void onMouseClick(MouseEvent mouseEvent) {
         String[] wordsList = new String[]{"Please", "enter", "some", "input", "data."};
         if(StringCheckingUtils.stringContainsItemFromList(mainDisplay.getText(), wordsList)){
@@ -78,11 +66,11 @@ public class Controller {
         }
         Button button = (Button) mouseEvent.getSource();
         String number = button.getText();
-        insertNumber(number);
+        addToDisplay(number);
     }
 
     public void onNextClick(MouseEvent mouseEvent){
-        insertSpace();
+        addToDisplay(DELIMITER);
     }
 
     // Removing a previously entered number
@@ -101,7 +89,29 @@ public class Controller {
     }
 
     public void onDotClick(MouseEvent mouseEvent){
-        insertDot();
+        final String decimal = ".";
+        addToDisplay(decimal);
+    }
+
+
+    public void onFunctionClick(MouseEvent mouseEvent){
+        final Button funtionButton = (Button) mouseEvent.getSource();
+        final String action = funtionButton.getText();
+
+        updateInput();
+        switch (action) {
+            case "Min" -> resultDisplay.setText("Min: " + minimum.getOutputValue());
+            case "Max" -> resultDisplay.setText("Max: " + maximum.getOutputValue());
+            case "Mode" -> resultDisplay.setText("Mode: " + mode.getOutputList().stream().map(String::valueOf).collect(Collectors.joining(", ")));
+            case "Mean" -> resultDisplay.setText("Mean: " + mean.getOutputValue());
+            case "Median" -> resultDisplay.setText("Median: " + median.getOutputValue());
+            case "Stdev" -> resultDisplay.setText("Stdev: " + stdev.getOutputValue());
+            case "Mad" -> resultDisplay.setText("Mad: " + mad.getOutputValue());
+        }
+    }
+
+    private void addToDisplay(String content){
+        mainDisplay.setText(mainDisplay.getText() + content);
     }
 
     //Results of computation are cached, so updateInput can guard for it until the inputs get dirtied.
@@ -140,21 +150,5 @@ public class Controller {
         final Event inputEvent = new Event.EventBuilder().setInputs(inputs).build();
         //Deliver input.
         head.update(inputEvent);
-    }
-
-    public void onFunctionClick(MouseEvent mouseEvent){
-        final Button funtionButton = (Button) mouseEvent.getSource();
-        final String action = funtionButton.getText();
-
-        updateInput();
-        switch (action) {
-            case "Min" -> resultDisplay.setText("Min: " + minimum.getOutputValue());
-            case "Max" -> resultDisplay.setText("Max: " + maximum.getOutputValue());
-            case "Mode" -> resultDisplay.setText("Mode: " + mode.getOutputList().stream().map(String::valueOf).collect(Collectors.joining(", ")));
-            case "Mean" -> resultDisplay.setText("Mean: " + mean.getOutputValue());
-            case "Median" -> resultDisplay.setText("Median: " + median.getOutputValue());
-            case "Stdev" -> resultDisplay.setText("Stdev: " + stdev.getOutputValue());
-            case "Mad" -> resultDisplay.setText("Mad: " + mad.getOutputValue());
-        }
     }
 }
