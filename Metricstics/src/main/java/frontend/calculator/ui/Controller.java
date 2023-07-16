@@ -104,18 +104,7 @@ public class Controller {
         insertDot();
     }
 
-    public void onComputeClick(String action){
-        updateInput();
-        switch (action) {
-            case "Min" -> resultDisplay.setText("Min: " + minimum.getOutputValue());
-            case "Max" -> resultDisplay.setText("Max: " + maximum.getOutputValue());
-            case "Mode" -> resultDisplay.setText("Mode: " + mode.getOutputList().stream().map(String::valueOf).collect(Collectors.joining(", ")));
-            case "Mean" -> resultDisplay.setText("Mean: " + mean.getOutputValue());
-            case "Median" -> resultDisplay.setText("Median: " + median.getOutputValue());
-            case "Stdev" -> resultDisplay.setText("Stdev: " + stdev.getOutputValue());
-            case "Mad" -> resultDisplay.setText("Mad: " + mad.getOutputValue());
-        }
-    }
+    //Results of computation are cached, so updateInput can guard for it until the inputs get dirtied.
     private void updateInput(){
         // checking if there is input or not
         if(mainDisplay.getText().length() == 0){
@@ -123,15 +112,17 @@ public class Controller {
             return;
         }
         // retrieving inputs
-        final String input = mainDisplay.getText();
-        //no need to update if the inputs are the same
+        final String input = mainDisplay.getText().trim();
+        //no need to update if the input is unchanged
         if (input.equals(previousInput)){
             return;
         }
-        previousInput = input;
+        else{
+            previousInput = input;
+        }
 
         final String[] inputArr = input.split(DELIMITER+"+");
-        List<Double> inputs = new ArrayList<>();
+        final List<Double> inputs = new ArrayList<>();
         // parsing inputs
         for(String str : inputArr){
             try{
@@ -154,6 +145,16 @@ public class Controller {
     public void onFunctionClick(MouseEvent mouseEvent){
         final Button funtionButton = (Button) mouseEvent.getSource();
         final String action = funtionButton.getText();
-        onComputeClick(action);
+
+        updateInput();
+        switch (action) {
+            case "Min" -> resultDisplay.setText("Min: " + minimum.getOutputValue());
+            case "Max" -> resultDisplay.setText("Max: " + maximum.getOutputValue());
+            case "Mode" -> resultDisplay.setText("Mode: " + mode.getOutputList().stream().map(String::valueOf).collect(Collectors.joining(", ")));
+            case "Mean" -> resultDisplay.setText("Mean: " + mean.getOutputValue());
+            case "Median" -> resultDisplay.setText("Median: " + median.getOutputValue());
+            case "Stdev" -> resultDisplay.setText("Stdev: " + stdev.getOutputValue());
+            case "Mad" -> resultDisplay.setText("Mad: " + mad.getOutputValue());
+        }
     }
 }
