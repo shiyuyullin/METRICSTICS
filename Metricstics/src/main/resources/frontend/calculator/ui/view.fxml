@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.calculator.ui.Controller">
+  <children>
+      <TextArea fx:id="mainDisplay" layoutX="38.0" layoutY="79.0" prefHeight="60.0" prefWidth="442.0" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextArea>
+      <TextArea fx:id="resultDisplay" layoutX="38.0" layoutY="14.0" prefHeight="60.0" prefWidth="287.0" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextArea>
+    <FlowPane layoutX="38.0" layoutY="145.0" prefHeight="180.0" prefWidth="180.0">
+      <children>
+        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#onMouseClick" prefHeight="60.0" prefWidth="60.0" text="7">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#onMouseClick" prefHeight="60.0" prefWidth="60.0" text="8">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+        <Button layoutX="70.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#onMouseClick" prefHeight="60.0" prefWidth="60.0" text="9">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+        <Button layoutX="130.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#onMouseClick" prefHeight="60.0" prefWidth="60.0" text="4">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+        <Button layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onMouseClicked="#onMouseClick" prefHeight="60.0" prefWidth="60.0" text="5">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+        <Button layoutX="70.0" layoutY="70.0" mnemonicParsing="false" onMouseClicked="#onMouseClick" prefHeight="60.0" prefWidth="60.0" text="6">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+        <Button layoutX="130.0" layoutY="70.0" mnemonicParsing="false" onMouseClicked="#onMouseClick" prefHeight="60.0" prefWidth="60.0" text="1">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+        <Button layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onMouseClicked="#onMouseClick" prefHeight="60.0" prefWidth="60.0" text="2">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+        <Button layoutX="70.0" layoutY="130.0" mnemonicParsing="false" onMouseClicked="#onMouseClick" prefHeight="60.0" prefWidth="60.0" text="3">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+        <Button layoutX="70.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#onMouseClick" prefHeight="60.0" prefWidth="60.0" text="0">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#onDotClick" prefHeight="60.0" prefWidth="60.0" text=".">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#onComputeClick" prefHeight="60.0" prefWidth="60.0" text="=">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+        <Button mnemonicParsing="false" onMouseClicked="#onNextClick" prefHeight="60.0" prefWidth="60.0" text="&gt;">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+        <Button mnemonicParsing="false" onMouseClicked="#onDeleteClick" prefHeight="60.0" prefWidth="60.0" text="&lt;">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#onClearClick" prefHeight="60.0" prefWidth="60.0" text="C">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+      </children>
+    </FlowPane>
+    <VBox layoutX="243.0" layoutY="145.0" prefHeight="240.0" prefWidth="100.0">
+      <children>
+        <Button mnemonicParsing="false" onMouseClicked="#onFunctionClick" prefHeight="60.0" prefWidth="107.0" text="Min">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+        <Button layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onMouseClicked="#onFunctionClick" prefHeight="60.0" prefWidth="130.0" text="Max">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+        <Button layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onMouseClicked="#onFunctionClick" prefHeight="60.0" prefWidth="132.0" text="Mode">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+        <Button layoutX="10.0" layoutY="172.0" mnemonicParsing="false" onMouseClicked="#onFunctionClick" prefHeight="60.0" prefWidth="170.0" text="Mean">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Button>
+      </children>
+    </VBox>
+    <Text fx:id="savedNumbers" layoutX="30.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <VBox layoutX="352.0" layoutY="145.0" prefHeight="240.0" prefWidth="126.0">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#onFunctionClick" prefHeight="60.0" prefWidth="200.0" text="Median">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onMouseClicked="#onFunctionClick" prefHeight="60.0" prefWidth="202.0" text="Stdev">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onMouseClicked="#onFunctionClick" prefHeight="60.0" prefWidth="139.0" text="Mad">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+  </children>
+</AnchorPane>
