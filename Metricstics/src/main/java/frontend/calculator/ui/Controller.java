@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -99,13 +99,13 @@ public class Controller {
 
         updateInput();
         switch (action) {
-            case "Min" -> resultDisplay.setText("Min: " + minimum.getOutputValue());
-            case "Max" -> resultDisplay.setText("Max: " + maximum.getOutputValue());
-            case "Mode" -> resultDisplay.setText("Mode: " + mode.getOutputList().stream().map(String::valueOf).collect(Collectors.joining(", ")));
-            case "Mean" -> resultDisplay.setText("Mean: " + mean.getOutputValue());
+            case "Min"    -> resultDisplay.setText("Min: "    + minimum.getOutputValue());
+            case "Max"    -> resultDisplay.setText("Max: "    + maximum.getOutputValue());
+            case "Mode"   -> resultDisplay.setText("Mode: "   + mode.getOutputList().stream().map(String::valueOf).collect(Collectors.joining(", ")));
+            case "Mean"   -> resultDisplay.setText("Mean: "   + mean.getOutputValue());
             case "Median" -> resultDisplay.setText("Median: " + median.getOutputValue());
-            case "Stdev" -> resultDisplay.setText("Stdev: " + stdev.getOutputValue());
-            case "Mad" -> resultDisplay.setText("Mad: " + mad.getOutputValue());
+            case "Stdev"  -> resultDisplay.setText("Stdev: "  + stdev.getOutputValue());
+            case "Mad"    -> resultDisplay.setText("Mad: "    + mad.getOutputValue());
         }
     }
 
@@ -130,24 +130,16 @@ public class Controller {
             previousInput = input;
         }
 
-        final String[] inputArr = input.split(DELIMITER+"+");
-        final List<Double> inputs = new ArrayList<>();
+        final String[] inputs = input.split(DELIMITER+"+");
         // parsing inputs
-        for(String str : inputArr){
-            try{
-                final double temp = Double.parseDouble(str);
-                inputs.add(temp);
-            }
-            catch (NumberFormatException e){
-                System.err.println("skipping: " + str);
-            }
-        }
-        // sorting in ascending order
-        inputs.sort(Comparator.comparing(Double::doubleValue));
+        final List<Double> numbers = Arrays.stream(inputs)
+                .filter(str -> str.matches("-?\\d+\\.?\\d*|\\.\\d+")) //validate
+                .map(Double::parseDouble) //convert
+                .sorted(Comparator.comparingDouble(Double::doubleValue)) // sorting in ascending order
+                .toList();
 
-        // Clearing mainDisplay
-        final Event inputEvent = new Event.EventBuilder().setInputs(inputs).build();
         //Deliver input.
+        final Event inputEvent = new Event.EventBuilder().setInputs(numbers).build();
         head.update(inputEvent);
     }
 }
