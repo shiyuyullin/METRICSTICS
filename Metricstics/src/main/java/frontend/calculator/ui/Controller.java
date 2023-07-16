@@ -78,7 +78,7 @@ public class Controller {
     public void onDeleteClick(MouseEvent mouseEvent){
         String numbers = mainDisplay.getText();
         final int truncate = numbers.lastIndexOf(DELIMITER);
-        numbers = numbers.substring(0, truncate);
+        numbers = numbers.substring(0, truncate).trim();
         mainDisplay.setText(numbers);
     }
 
@@ -92,7 +92,6 @@ public class Controller {
         final String decimal = ".";
         addToDisplay(decimal);
     }
-
 
     public void onFunctionClick(MouseEvent mouseEvent){
         final Button funtionButton = (Button) mouseEvent.getSource();
