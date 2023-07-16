@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
-import backend.model.*;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -21,9 +20,9 @@ public class Controller {
     @FXML
     private TextArea resultDisplay;
 
-    private List<Double> inputs;
+    private String previousInput;
 
-    private String action;
+    final private String DELIMITER = " ";
 
     ComputeObserver head;
     ComputeObserver minimum;
@@ -65,7 +64,7 @@ public class Controller {
     }
 
     public void insertSpace(){
-        mainDisplay.setText(mainDisplay.getText() + " ");
+        mainDisplay.setText(mainDisplay.getText() + DELIMITER);
     }
 
     public void insertDot(){
@@ -90,55 +89,23 @@ public class Controller {
     // ex. if the numbers are 11 22 33, this actions will remove 33
     public void onDeleteClick(MouseEvent mouseEvent){
         String numbers = mainDisplay.getText();
-        String[] numbersArr = numbers.split(" ");
-        StringBuilder newNumbers = new StringBuilder();
-        for(int i = 0; i < numbersArr.length-1; i++){
-            if(!numbersArr[i].equals(" ")){
-                newNumbers.append(numbersArr[i]).append(" ");
-            }
-        }
-        mainDisplay.setText(newNumbers.toString());
+        final int truncate = numbers.lastIndexOf(DELIMITER);
+        numbers = numbers.substring(0, truncate);
+        mainDisplay.setText(numbers);
     }
 
     public void onClearClick(MouseEvent mouseEvent){
         mainDisplay.setText("");
         resultDisplay.setText("");
+        previousInput = null;
     }
 
     public void onDotClick(MouseEvent mouseEvent){
         insertDot();
     }
 
-    public void onComputeClick(MouseEvent mouseEvent){
-        // checking if there is input or not
-        if(mainDisplay.getText().length() == 0){
-            mainDisplay.setText("Please enter some input data.");
-        }
-        // retrieving inputs
-        String input = mainDisplay.getText();
-        String[] inputArr = input.split(" ");
-        inputs = new ArrayList<>();
-        // parsing inputs
-        for(String str : inputArr){
-            double temp;
-            try{
-                temp = Double.parseDouble(str);
-                inputs.add(temp);
-            }
-            catch (NumberFormatException e){
-                System.out.println("skipping");
-            }
-        }
-        // sorting in ascending order
-        inputs.sort(Comparator.comparing(Double::doubleValue));
-        for(Double d : inputs){
-            System.out.println(d);
-        }
-        // Clearing mainDisplay
-        mainDisplay.setText("");
-        Event inputEvent = new Event.EventBuilder().setInputs(inputs).build();
-        //Deliver input.
-        head.update(inputEvent);
+    public void onComputeClick(String action){
+        updateInput();
         switch (action) {
             case "Min" -> resultDisplay.setText("Min: " + minimum.getOutputValue());
             case "Max" -> resultDisplay.setText("Max: " + maximum.getOutputValue());
@@ -149,9 +116,44 @@ public class Controller {
             case "Mad" -> resultDisplay.setText("Mad: " + mad.getOutputValue());
         }
     }
+    private void updateInput(){
+        // checking if there is input or not
+        if(mainDisplay.getText().length() == 0){
+            mainDisplay.setText("Please enter some input data.");
+            return;
+        }
+        // retrieving inputs
+        final String input = mainDisplay.getText();
+        //no need to update if the inputs are the same
+        if (input.equals(previousInput)){
+            return;
+        }
+        previousInput = input;
+
+        final String[] inputArr = input.split(DELIMITER+"+");
+        List<Double> inputs = new ArrayList<>();
+        // parsing inputs
+        for(String str : inputArr){
+            try{
+                final double temp = Double.parseDouble(str);
+                inputs.add(temp);
+            }
+            catch (NumberFormatException e){
+                System.err.println("skipping: " + str);
+            }
+        }
+        // sorting in ascending order
+        inputs.sort(Comparator.comparing(Double::doubleValue));
+
+        // Clearing mainDisplay
+        final Event inputEvent = new Event.EventBuilder().setInputs(inputs).build();
+        //Deliver input.
+        head.update(inputEvent);
+    }
 
     public void onFunctionClick(MouseEvent mouseEvent){
-        Button funtionButton = (Button) mouseEvent.getSource();
-        action = funtionButton.getText();
+        final Button funtionButton = (Button) mouseEvent.getSource();
+        final String action = funtionButton.getText();
+        onComputeClick(action);
     }
 }
