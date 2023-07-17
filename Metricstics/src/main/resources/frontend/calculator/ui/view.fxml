@@ -77,11 +77,6 @@
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onMouseClicked="#onComputeClick" prefHeight="60.0" prefWidth="60.0" text="=">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Button>
         <Button mnemonicParsing="false" onMouseClicked="#onNextClick" prefHeight="60.0" prefWidth="60.0" text="&gt;">
           <font>
             <Font size="25.0" />
