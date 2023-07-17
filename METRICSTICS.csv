@@ -1,0 +1,92 @@
+Kind,Name,Cyclomatic,SumCyclomatic,PercentLackOfCohesion,CountClassCoupled,CountClassCoupledModified,CountLineCode,CountLineCodeDecl,CountLineCodeExe
+Package,"backend",,0,,,,0,0,0
+Package,"backend.helper",,11,,,,43,19,19
+Public Class,"backend.helper.CustomMath",,11,90,0,0,42,18,19
+Private Constructor,"backend.helper.CustomMath.CustomMath()",1,1,,,,2,1,0
+Public Method,"backend.helper.CustomMath.absoluteValue(double)",1,1,,,,4,2,2
+Public Method,"backend.helper.CustomMath.absoluteValue(int)",1,1,,,,3,1,1
+Public Static Method,"backend.helper.CustomMath.getInstance()",1,1,,,,3,1,1
+Public Method,"backend.helper.CustomMath.maximum(double,double)",1,1,,,,5,3,3
+Public Method,"backend.helper.CustomMath.maximum(int,int)",1,1,,,,3,1,1
+Public Method,"backend.helper.CustomMath.oneIfGreaterThanElseZero(double,double)",1,1,,,,3,1,1
+Public Method,"backend.helper.CustomMath.signBit(double)",1,1,,,,3,1,1
+Public Method,"backend.helper.CustomMath.squareRoot(double)",1,1,,,,4,2,2
+Public Method,"backend.helper.CustomMath.squareRoot(double,double)",2,2,,,,9,3,6
+Package,"backend.model",,30,,,,185,101,75
+Public Class,"backend.model.ComputeEmpty",,1,0,2,2,6,3,1
+Public Method,"backend.model.ComputeEmpty.update(Event)",1,1,,,,4,2,1
+Public Class,"backend.model.ComputeMaximum",,1,0,3,3,9,5,4
+Public Method,"backend.model.ComputeMaximum.update(Event)",1,1,,,,7,4,4
+Public Class,"backend.model.ComputeMean",,1,0,5,5,12,8,7
+Public Method,"backend.model.ComputeMean.update(Event)",1,1,,,,10,7,7
+Public Class,"backend.model.ComputeMeanAbsoluteDeviation",,2,0,5,5,14,8,9
+Public Method,"backend.model.ComputeMeanAbsoluteDeviation.update(Event)",1,2,,,,12,7,9
+Lambda Method,"backend.model.ComputeMeanAbsoluteDeviation.update.(lambda_expr_1)()",1,1,,,,1,0,1
+Public Class,"backend.model.ComputeMedian",,1,0,3,3,11,7,6
+Public Method,"backend.model.ComputeMedian.update(Event)",1,1,,,,9,6,6
+Public Class,"backend.model.ComputeMinimum",,1,0,2,2,8,4,3
+Public Method,"backend.model.ComputeMinimum.update(Event)",1,1,,,,6,3,3
+Public Class,"backend.model.ComputeMode",,5,0,6,6,28,10,18
+Private Method,"backend.model.ComputeMode.findMode(List<Double>)",4,4,,,,21,7,16
+Public Method,"backend.model.ComputeMode.update(Event)",1,1,,,,5,2,2
+Public Abstract Class,"backend.model.ComputeObserver",,6,67,3,3,21,10,5
+Public Constructor,"backend.model.ComputeObserver.ComputeObserver()",1,1,,,,3,1,1
+Public Method,"backend.model.ComputeObserver.addObserver(ComputeObserver)",1,1,,,,3,1,1
+Public Method,"backend.model.ComputeObserver.getOutputList()",1,1,,,,3,1,1
+Public Method,"backend.model.ComputeObserver.getOutputValue()",1,1,,,,3,1,1
+Public Abstract Method,"backend.model.ComputeObserver.update(Event)",0,0,,,,1,1,0
+Public Method,"backend.model.ComputeObserver.updateObservers(Event)",1,2,,,,3,1,1
+Lambda Method,"backend.model.ComputeObserver.updateObservers.(lambda_expr_1)()",1,1,,,,1,0,1
+Public Class,"backend.model.ComputeStandardDeviation",,3,0,5,5,14,8,9
+Public Method,"backend.model.ComputeStandardDeviation.update(Event)",1,3,,,,12,7,9
+Lambda Method,"backend.model.ComputeStandardDeviation.update.(lambda_expr_1)()",1,1,,,,1,0,1
+Lambda Method,"backend.model.ComputeStandardDeviation.update.(lambda_expr_2)()",1,1,,,,1,0,1
+Public Class,"backend.model.Event",,3,33,2,2,39,15,13
+Private Constructor,"backend.model.Event.Event(EventBuilder)",1,1,,,,4,1,2
+Public Static Class,"backend.model.Event.EventBuilder",,6,58,2,2,25,9,9
+Public Constructor,"backend.model.Event.EventBuilder.EventBuilder()",1,1,,,,2,1,0
+Public Constructor,"backend.model.Event.EventBuilder.EventBuilder(Event)",1,1,,,,4,1,2
+Public Method,"backend.model.Event.EventBuilder.addInput(double)",1,1,,,,4,1,2
+Public Method,"backend.model.Event.EventBuilder.build()",1,1,,,,3,1,1
+Public Method,"backend.model.Event.EventBuilder.setInputs(List<Double>)",1,1,,,,4,1,2
+Public Method,"backend.model.Event.EventBuilder.setMean(double)",1,1,,,,4,1,2
+Public Method,"backend.model.Event.getInputs()",1,1,,,,3,1,1
+Public Method,"backend.model.Event.getMean()",1,1,,,,3,1,1
+Package,"frontend",,0,,,,0,0,0
+Package,"frontend.Utils",,1,,,,7,4,1
+Public Class,"frontend.Utils.StringCheckingUtils",,1,0,2,2,5,2,1
+Public Static Method,"frontend.Utils.StringCheckingUtils.stringContainsItemFromList(String,String[])",1,1,,,,3,1,1
+Package,"frontend.calculator",,0,,,,0,0,0
+Package,"frontend.calculator.ui",,23,,,,136,64,68
+Public Class,"frontend.calculator.ui.App",,1,0,1,1,5,2,1
+Public Static Method,"frontend.calculator.ui.App.main(String[])",1,1,,,,3,1,1
+Public Class,"frontend.calculator.ui.Controller",,20,73,22,22,100,38,61
+Private Method,"frontend.calculator.ui.Controller.addToDisplay(String)",1,1,,,,3,1,1
+Public Method,"frontend.calculator.ui.Controller.initialize()",1,1,,,,19,2,16
+Public Method,"frontend.calculator.ui.Controller.onClearClick(MouseEvent)",1,1,,,,5,1,3
+Public Method,"frontend.calculator.ui.Controller.onDeleteClick(MouseEvent)",1,1,,,,6,3,4
+Public Method,"frontend.calculator.ui.Controller.onDotClick(MouseEvent)",1,1,,,,4,2,2
+Public Method,"frontend.calculator.ui.Controller.onFunctionClick(MouseEvent)",8,8,,,,14,3,11
+Public Method,"frontend.calculator.ui.Controller.onMouseClick(MouseEvent)",2,2,,,,9,4,6
+Public Method,"frontend.calculator.ui.Controller.onNextClick(MouseEvent)",1,1,,,,3,1,1
+Private Method,"frontend.calculator.ui.Controller.updateInput()",3,4,,,,21,6,16
+Lambda Method,"frontend.calculator.ui.Controller.updateInput.(lambda_expr_1)()",1,1,,,,1,0,1
+Public Class,"frontend.calculator.ui.MetricsticsUI",,2,0,5,5,12,6,6
+Public Static Method,"frontend.calculator.ui.MetricsticsUI.main(String[])",1,1,,,,3,1,1
+Public Method,"frontend.calculator.ui.MetricsticsUI.start(Stage)",1,1,,,,8,4,5
+File,"java\backend\helper\CustomMath.java",,11,,,,43,19,19
+File,"java\backend\model\ComputeEmpty.java",,1,,,,7,4,1
+File,"java\backend\model\ComputeMaximum.java",,1,,,,11,7,4
+File,"java\backend\model\ComputeMean.java",,1,,,,14,10,7
+File,"java\backend\model\ComputeMeanAbsoluteDeviation.java",,2,,,,17,11,9
+File,"java\backend\model\ComputeMedian.java",,1,,,,13,9,6
+File,"java\backend\model\ComputeMinimum.java",,1,,,,9,5,3
+File,"java\backend\model\ComputeMode.java",,5,,,,32,14,18
+File,"java\backend\model\ComputeObserver.java",,6,,,,24,13,5
+File,"java\backend\model\ComputeStandardDeviation.java",,3,,,,17,11,9
+File,"java\backend\model\Event.java",,9,,,,41,17,13
+File,"java\frontend\Utils\StringCheckingUtils.java",,1,,,,7,4,1
+File,"java\frontend\calculator\ui\App.java",,1,,,,6,3,1
+File,"java\frontend\calculator\ui\Controller.java",,20,,,,111,49,61
+File,"java\frontend\calculator\ui\MetricsticsUI.java",,2,,,,19,12,6
+File,"java\module-info.java",,0,,,,0,0,0
