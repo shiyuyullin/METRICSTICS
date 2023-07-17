@@ -77,6 +77,11 @@
                   <Font size="25.0" />
                </font>
             </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#onClearClick" prefHeight="60.0" prefWidth="60.0" text="C">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
         <Button mnemonicParsing="false" onMouseClicked="#onNextClick" prefHeight="60.0" prefWidth="60.0" text="&gt;">
           <font>
             <Font size="25.0" />
@@ -87,11 +92,6 @@
             <Font size="25.0" />
           </font>
         </Button>
-            <Button mnemonicParsing="false" onMouseClicked="#onClearClick" prefHeight="60.0" prefWidth="60.0" text="C">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Button>
       </children>
     </FlowPane>
     <VBox layoutX="243.0" layoutY="145.0" prefHeight="240.0" prefWidth="100.0">
