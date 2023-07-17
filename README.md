@@ -2,7 +2,7 @@
 
 Team Batman - Members:<br/>
 
-Gursimarjit Singh Saini<br/>
+Gursimar Saini<br/>
 Aditya Joshi<br/>
 Shiyu Lin <br/>
 Kevin Rao <br/>
