@@ -1,0 +1,17 @@
+Kind,Name,SumCyclomatic,CountDeclMethod
+Public Class,"backend.helper.CustomMath",11,10
+Public Class,"backend.model.ComputeEmpty",1,1
+Public Class,"backend.model.ComputeMaximum",1,1
+Public Class,"backend.model.ComputeMean",1,1
+Public Class,"backend.model.ComputeMeanAbsoluteDeviation",2,1
+Public Class,"backend.model.ComputeMedian",1,1
+Public Class,"backend.model.ComputeMinimum",1,1
+Public Class,"backend.model.ComputeMode",5,2
+Public Abstract Class,"backend.model.ComputeObserver",6,6
+Public Class,"backend.model.ComputeStandardDeviation",3,1
+Public Class,"backend.model.Event",3,3
+Public Static Class,"backend.model.Event.EventBuilder",6,6
+Public Class,"frontend.Utils.StringCheckingUtils",1,1
+Public Class,"frontend.calculator.ui.App",1,1
+Public Class,"frontend.calculator.ui.Controller",20,9
+Public Class,"frontend.calculator.ui.MetricsticsUI",2,2

@@ -1,0 +1,37 @@
+Kind,Name,CountDeclClassVariable,CountDeclInstanceVariable
+Package,"backend.helper",1,0
+Public Class,"backend.helper.CustomMath",1,0
+Package,"backend.model",0,7
+Public Class,"backend.model.ComputeEmpty",0,0
+Public Class,"backend.model.ComputeMaximum",0,0
+Public Class,"backend.model.ComputeMean",0,0
+Public Class,"backend.model.ComputeMeanAbsoluteDeviation",0,0
+Public Class,"backend.model.ComputeMedian",0,0
+Public Class,"backend.model.ComputeMinimum",0,0
+Public Class,"backend.model.ComputeMode",0,0
+Public Abstract Class,"backend.model.ComputeObserver",0,3
+Public Class,"backend.model.ComputeStandardDeviation",0,0
+Public Class,"backend.model.Event",0,2
+Public Static Class,"backend.model.Event.EventBuilder",0,2
+Public Class,"frontend.Utils.StringCheckingUtils",0,0
+Package,"frontend.calculator",0,0
+Package,"frontend.calculator.ui",0,12
+Public Class,"frontend.calculator.ui.App",0,0
+Public Class,"frontend.calculator.ui.Controller",0,12
+Public Class,"frontend.calculator.ui.MetricsticsUI",0,0
+File,"java\backend\helper\CustomMath.java",1,0
+File,"java\backend\model\ComputeEmpty.java",0,0
+File,"java\backend\model\ComputeMaximum.java",0,0
+File,"java\backend\model\ComputeMean.java",0,0
+File,"java\backend\model\ComputeMeanAbsoluteDeviation.java",0,0
+File,"java\backend\model\ComputeMedian.java",0,0
+File,"java\backend\model\ComputeMinimum.java",0,0
+File,"java\backend\model\ComputeMode.java",0,0
+File,"java\backend\model\ComputeObserver.java",0,3
+File,"java\backend\model\ComputeStandardDeviation.java",0,0
+File,"java\backend\model\Event.java",0,4
+File,"java\frontend\Utils\StringCheckingUtils.java",0,0
+File,"java\frontend\calculator\ui\App.java",0,0
+File,"java\frontend\calculator\ui\Controller.java",0,12
+File,"java\frontend\calculator\ui\MetricsticsUI.java",0,0
+File,"java\module-info.java",0,0

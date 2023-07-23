@@ -1,0 +1,37 @@
+Kind,Name,CountDeclMethodPublic,CountDeclMethodProtected,CountDeclMethodPrivate,CountDeclMethodDefault,CountDeclMethodAll,CountDeclMethod,CountDeclInstanceMethod,CountDeclClassMethod
+Package,"backend.helper",9,0,1,0,,10,9,1
+Package,"backend.model",22,0,2,0,,24,24,0
+Package,"frontend.Utils",1,0,0,0,,1,0,1
+Package,"frontend.calculator.ui",10,0,2,0,,12,10,2
+Public Class,"backend.helper.CustomMath",9,0,1,0,10,10,9,1
+Public Class,"backend.model.ComputeEmpty",1,0,0,0,7,1,1,0
+Public Class,"backend.model.ComputeMaximum",1,0,0,0,7,1,1,0
+Public Class,"backend.model.ComputeMean",1,0,0,0,7,1,1,0
+Public Class,"backend.model.ComputeMeanAbsoluteDeviation",1,0,0,0,7,1,1,0
+Public Class,"backend.model.ComputeMedian",1,0,0,0,7,1,1,0
+Public Class,"backend.model.ComputeMinimum",1,0,0,0,7,1,1,0
+Public Class,"backend.model.ComputeMode",1,0,1,0,8,2,2,0
+Public Abstract Class,"backend.model.ComputeObserver",6,0,0,0,6,6,6,0
+Public Class,"backend.model.ComputeStandardDeviation",1,0,0,0,7,1,1,0
+Public Class,"backend.model.Event",2,0,1,0,3,3,3,0
+Public Static Class,"backend.model.Event.EventBuilder",6,0,0,0,6,6,6,0
+Public Class,"frontend.Utils.StringCheckingUtils",1,0,0,0,1,1,0,1
+Public Class,"frontend.calculator.ui.App",1,0,0,0,1,1,0,1
+Public Class,"frontend.calculator.ui.Controller",7,0,2,0,9,9,9,0
+Public Class,"frontend.calculator.ui.MetricsticsUI",2,0,0,0,2,2,1,1
+File,"java\backend\helper\CustomMath.java",9,0,1,0,,10,9,1
+File,"java\backend\model\ComputeEmpty.java",1,0,0,0,,1,1,0
+File,"java\backend\model\ComputeMaximum.java",1,0,0,0,,1,1,0
+File,"java\backend\model\ComputeMean.java",1,0,0,0,,1,1,0
+File,"java\backend\model\ComputeMeanAbsoluteDeviation.java",1,0,0,0,,1,1,0
+File,"java\backend\model\ComputeMedian.java",1,0,0,0,,1,1,0
+File,"java\backend\model\ComputeMinimum.java",1,0,0,0,,1,1,0
+File,"java\backend\model\ComputeMode.java",1,0,1,0,,2,2,0
+File,"java\backend\model\ComputeObserver.java",6,0,0,0,,6,6,0
+File,"java\backend\model\ComputeStandardDeviation.java",1,0,0,0,,1,1,0
+File,"java\backend\model\Event.java",8,0,1,0,,9,9,0
+File,"java\frontend\Utils\StringCheckingUtils.java",1,0,0,0,,1,0,1
+File,"java\frontend\calculator\ui\App.java",1,0,0,0,,1,0,1
+File,"java\frontend\calculator\ui\Controller.java",7,0,2,0,,9,9,0
+File,"java\frontend\calculator\ui\MetricsticsUI.java",2,0,0,0,,2,1,1
+File,"java\module-info.java",0,0,0,0,,0,0,0
