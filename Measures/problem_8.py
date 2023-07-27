@@ -5,7 +5,7 @@ from scipy.stats import shapiro, kstest, rankdata
 
 def scatter_plot(x_values, y_values, labels, x_label, y_label, title):
     
-    plt.figure(figsize=(12, 8))
+    plt.figure(figsize=(14, 7))
 
     colors = ["Red", "Green", "Blue", "Yellow", "Orange", "Purple", "Pink", "Brown", "Cyan", "Magenta", "Lime", "Teal", "Indigo", "Gray", "Olive"]
 

@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<svg width="2537" height="746" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <polygon points="4,742 4,4 2534,4 2534,742 4,742" stroke="#fffffe00" fill="#1e1e1e"/>
+ <polygon points="1443,4 1337,4 1337,104 1443,104 1443,4" stroke="#8f8f8f" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="1345" y="16"></tspan>
+  <tspan x="1345" y="25"></tspan>
+  <tspan x="1345" y="34">java.lang.Object</tspan>
+  <tspan x="1345" y="43"></tspan>
+  <tspan x="1345" y="52"></tspan>
+  <tspan x="1345" y="61"></tspan>
+  <tspan x="1345" y="70"></tspan>
+  <tspan x="1345" y="79"></tspan></text>
+ <polygon points="752,267 459,267 459,465 752,465 752,267" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="467" y="279"></tspan>
+  <tspan x="467" y="288">▲</tspan>
+  <tspan x="467" y="297">backend.helper.CustomMath</tspan>
+  <tspan x="467" y="306"></tspan>
+  <tspan x="467" y="315"></tspan>
+  <tspan x="467" y="324">- singleton: CustomMath= CustomMath()</tspan>
+  <tspan x="467" y="333"></tspan>
+  <tspan x="467" y="342">+ getInstance ()</tspan>
+  <tspan x="467" y="351">+ squareRoot (a: double ,threshold: double )</tspan>
+  <tspan x="467" y="360">+ signBit (a: double )</tspan>
+  <tspan x="467" y="369">+ oneIfGreaterThanElseZero (a: double ,b: double )</tspan>
+  <tspan x="467" y="378">+ maximum (a: int ,b: int )</tspan>
+  <tspan x="467" y="387">+ absoluteValue (a: double )</tspan>
+  <tspan x="467" y="396">- CustomMath ()</tspan>
+  <tspan x="467" y="405"></tspan></text>
+ <path d="M 666 267 C 691 233, 723 198, 761 176 C 858 119, 1195 76, 1332 61" stroke="#4e8cb9" fill="none"/>
+ <polygon points="1332,59 1337,61 1332,63 1332,59" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="1036,260 770,260 770,472 1036,472 1036,260" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="778" y="272"></tspan>
+  <tspan x="778" y="281">▲</tspan>
+  <tspan x="778" y="290">backend.model.ComputeObserver</tspan>
+  <tspan x="778" y="299">▲</tspan>
+  <tspan x="778" y="308"></tspan>
+  <tspan x="778" y="317"># outputValue: double</tspan>
+  <tspan x="778" y="326"># outputList: List&lt;Double&gt;</tspan>
+  <tspan x="778" y="335">- observers: List&lt;ComputeObserver&gt;</tspan>
+  <tspan x="778" y="344"></tspan>
+  <tspan x="778" y="353">+ updateObservers (event: Event )</tspan>
+  <tspan x="778" y="362">+ getOutputValue ()</tspan>
+  <tspan x="778" y="371">+ getOutputList ()</tspan>
+  <tspan x="778" y="380">+ addObserver (observer: ComputeObserver )</tspan>
+  <tspan x="778" y="389">+ ComputeObserver ()</tspan>
+  <tspan x="778" y="398">+ update (event: Event )</tspan>
+  <tspan x="778" y="407"></tspan></text>
+ <path d="M 965 260 C 987 229, 1014 198, 1045 176 C 1133 111, 1259 79, 1332 65" stroke="#4e8cb9" fill="none"/>
+ <polygon points="1331,63 1337,64 1332,66 1331,63" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="192,635 4,635 4,735 192,735 192,635" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="12" y="647"></tspan>
+  <tspan x="12" y="656">▲</tspan>
+  <tspan x="12" y="665">backend.model.ComputeEmpty</tspan>
+  <tspan x="12" y="674"></tspan>
+  <tspan x="12" y="683"></tspan>
+  <tspan x="12" y="692"></tspan>
+  <tspan x="12" y="701">+ update (event: Event )</tspan>
+  <tspan x="12" y="710"></tspan></text>
+ <path d="M 183 635 C 189 632, 195 630, 201 628 C 440 551, 544 682, 761 556 C 794 537, 821 507, 843 477" stroke="#4e8cb9" fill="none"/>
+ <polygon points="842,476 846,472 845,478 842,476" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="416,635 210,635 210,735 416,735 416,635" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="218" y="647"></tspan>
+  <tspan x="218" y="656">▲</tspan>
+  <tspan x="218" y="665">backend.model.ComputeMaximum</tspan>
+  <tspan x="218" y="674"></tspan>
+  <tspan x="218" y="683"></tspan>
+  <tspan x="218" y="692"></tspan>
+  <tspan x="218" y="701">+ update (event: Event )</tspan>
+  <tspan x="218" y="710"></tspan></text>
+ <path d="M 407 635 C 413 632, 419 630, 425 628 C 569 577, 632 638, 761 556 C 792 536, 819 506, 841 477" stroke="#4e8cb9" fill="none"/>
+ <polygon points="840,475 844,472 843,477 840,475" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="618,635 434,635 434,735 618,735 618,635" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="442" y="647"></tspan>
+  <tspan x="442" y="656">▲</tspan>
+  <tspan x="442" y="665">backend.model.ComputeMean</tspan>
+  <tspan x="442" y="674"></tspan>
+  <tspan x="442" y="683"></tspan>
+  <tspan x="442" y="692"></tspan>
+  <tspan x="442" y="701">+ update (event: Event )</tspan>
+  <tspan x="442" y="710"></tspan></text>
+ <path d="M 614 635 C 619 633, 623 630, 627 628 C 686 596, 710 600, 761 556 C 788 533, 812 505, 833 477" stroke="#4e8cb9" fill="none"/>
+ <polygon points="832,475 836,472 835,478 832,475" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="916,635 636,635 636,735 916,735 916,635" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="644" y="647"></tspan>
+  <tspan x="644" y="656">▲</tspan>
+  <tspan x="644" y="665">backend.model.ComputeMeanAbsoluteDeviation</tspan>
+  <tspan x="644" y="674"></tspan>
+  <tspan x="644" y="683"></tspan>
+  <tspan x="644" y="692"></tspan>
+  <tspan x="644" y="701">+ update (event: Event )</tspan>
+  <tspan x="644" y="710"></tspan></text>
+ <path d="M 796 635 C 813 593, 837 531, 859 477" stroke="#4e8cb9" fill="none"/>
+ <polygon points="857,476 861,472 861,477 857,476" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="1128,635 935,635 935,735 1128,735 1128,635" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="943" y="647"></tspan>
+  <tspan x="943" y="656">▲</tspan>
+  <tspan x="943" y="665">backend.model.ComputeMedian</tspan>
+  <tspan x="943" y="674"></tspan>
+  <tspan x="943" y="683"></tspan>
+  <tspan x="943" y="692"></tspan>
+  <tspan x="943" y="701">+ update (event: Event )</tspan>
+  <tspan x="943" y="710"></tspan></text>
+ <path d="M 1011 635 C 994 593, 969 531, 947 477" stroke="#4e8cb9" fill="none"/>
+ <polygon points="946,477 945,472 949,476 946,477" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="1348,635 1146,635 1146,735 1348,735 1348,635" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="1154" y="647"></tspan>
+  <tspan x="1154" y="656">▲</tspan>
+  <tspan x="1154" y="665">backend.model.ComputeMinimum</tspan>
+  <tspan x="1154" y="674"></tspan>
+  <tspan x="1154" y="683"></tspan>
+  <tspan x="1154" y="692"></tspan>
+  <tspan x="1154" y="701">+ update (event: Event )</tspan>
+  <tspan x="1154" y="710"></tspan></text>
+ <path d="M 1154 635 C 1118 613, 1078 586, 1045 556 C 1020 533, 995 504, 975 476" stroke="#4e8cb9" fill="none"/>
+ <polygon points="973,477 972,472 976,475 973,477" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="1568,628 1367,628 1367,742 1568,742 1568,628" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="1375" y="640"></tspan>
+  <tspan x="1375" y="649">▲</tspan>
+  <tspan x="1375" y="658">backend.model.ComputeMode</tspan>
+  <tspan x="1375" y="667"></tspan>
+  <tspan x="1375" y="676"></tspan>
+  <tspan x="1375" y="685"></tspan>
+  <tspan x="1375" y="694">+ update (event: Event )</tspan>
+  <tspan x="1375" y="703">- findMode (inputs: List&lt;Double&gt; )</tspan>
+  <tspan x="1375" y="712"></tspan></text>
+ <path d="M 1366 632 C 1363 630, 1360 629, 1357 628 C 1223 579, 1164 634, 1045 556 C 1014 536, 987 506, 965 476" stroke="#4e8cb9" fill="none"/>
+ <polygon points="964,477 962,472 966,475 964,477" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="1838,635 1586,635 1586,735 1838,735 1838,635" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="1594" y="647"></tspan>
+  <tspan x="1594" y="656">▲</tspan>
+  <tspan x="1594" y="665">backend.model.ComputeStandardDeviation</tspan>
+  <tspan x="1594" y="674"></tspan>
+  <tspan x="1594" y="683"></tspan>
+  <tspan x="1594" y="692"></tspan>
+  <tspan x="1594" y="701">+ update (event: Event )</tspan>
+  <tspan x="1594" y="710"></tspan></text>
+ <path d="M 1600 635 C 1592 632, 1584 630, 1577 628 C 1347 566, 1251 677, 1045 556 C 1012 537, 985 507, 963 476" stroke="#4e8cb9" fill="none"/>
+ <polygon points="961,477 960,472 964,475 961,477" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="1268,288 1054,288 1054,444 1268,444 1268,288" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="1062" y="300"></tspan>
+  <tspan x="1062" y="309">▲</tspan>
+  <tspan x="1062" y="318">backend.model.Event</tspan>
+  <tspan x="1062" y="327"></tspan>
+  <tspan x="1062" y="336"></tspan>
+  <tspan x="1062" y="345">- mean: double</tspan>
+  <tspan x="1062" y="354">- inputs: List&lt;Double&gt;</tspan>
+  <tspan x="1062" y="363"></tspan>
+  <tspan x="1062" y="372">+ getMean ()</tspan>
+  <tspan x="1062" y="381">+ getInputs ()</tspan>
+  <tspan x="1062" y="390">- Event (eventBuilder: EventBuilder )</tspan>
+  <tspan x="1062" y="399"></tspan></text>
+ <path d="M 1204 288 C 1225 253, 1251 211, 1278 176 C 1296 153, 1318 128, 1337 108" stroke="#4e8cb9" fill="none"/>
+ <polygon points="1336,106 1341,104 1338,109 1336,106" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="1494,274 1287,274 1287,458 1494,458 1494,274" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="1295" y="286"></tspan>
+  <tspan x="1295" y="295">▲</tspan>
+  <tspan x="1295" y="304">backend.model.Event.EventBuilder</tspan>
+  <tspan x="1295" y="313"></tspan>
+  <tspan x="1295" y="322"></tspan>
+  <tspan x="1295" y="331">- mean: double</tspan>
+  <tspan x="1295" y="340">- inputs: List&lt;Double&gt;</tspan>
+  <tspan x="1295" y="349"></tspan>
+  <tspan x="1295" y="358">+ setMean (mean: double )</tspan>
+  <tspan x="1295" y="367">+ setInputs (inputs: List&lt;Double&gt; )</tspan>
+  <tspan x="1295" y="376">+ build ()</tspan>
+  <tspan x="1295" y="385">+ addInput (input: double )</tspan>
+  <tspan x="1295" y="394">+ EventBuilder (event: Event )</tspan>
+  <tspan x="1295" y="403"></tspan></text>
+ <path d="M 1390 274 C 1390 220, 1390 155, 1390 110" stroke="#4e8cb9" fill="none"/>
+ <polygon points="1388,109 1390,104 1392,109 1388,109" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="1863,316 1512,316 1512,416 1863,416 1863,316" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="1520" y="328"></tspan>
+  <tspan x="1520" y="337">▲</tspan>
+  <tspan x="1520" y="346">frontend.Utils.StringCheckingUtils</tspan>
+  <tspan x="1520" y="355"></tspan>
+  <tspan x="1520" y="364"></tspan>
+  <tspan x="1520" y="373"></tspan>
+  <tspan x="1520" y="382">+ stringContainsItemFromList (inputStr: String ,items: String[] )</tspan>
+  <tspan x="1520" y="391"></tspan></text>
+ <path d="M 1640 316 C 1586 259, 1497 166, 1441 108" stroke="#4e8cb9" fill="none"/>
+ <polygon points="1439,109 1437,104 1442,107 1439,109" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="2037,316 1881,316 1881,416 2037,416 2037,316" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="1889" y="328"></tspan>
+  <tspan x="1889" y="337">▲</tspan>
+  <tspan x="1889" y="346">frontend.calculator.ui.App</tspan>
+  <tspan x="1889" y="355"></tspan>
+  <tspan x="1889" y="364"></tspan>
+  <tspan x="1889" y="373"></tspan>
+  <tspan x="1889" y="382">+ main (args: String[] )</tspan>
+  <tspan x="1889" y="391"></tspan></text>
+ <path d="M 1949 316 C 1938 273, 1915 212, 1872 176 C 1748 73, 1547 56, 1448 54" stroke="#4e8cb9" fill="none"/>
+ <polygon points="1448,56 1443,54 1448,52 1448,56" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="2327,176 2056,176 2056,556 2327,556 2327,176" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="2064" y="188"></tspan>
+  <tspan x="2064" y="197">▲</tspan>
+  <tspan x="2064" y="206">frontend.calculator.ui.Controller</tspan>
+  <tspan x="2064" y="215"></tspan>
+  <tspan x="2064" y="224"></tspan>
+  <tspan x="2064" y="233">+ stdev: ComputeObserver</tspan>
+  <tspan x="2064" y="242">+ mode: ComputeObserver</tspan>
+  <tspan x="2064" y="251">+ minimum: ComputeObserver</tspan>
+  <tspan x="2064" y="260">+ median: ComputeObserver</tspan>
+  <tspan x="2064" y="269">+ mean: ComputeObserver</tspan>
+  <tspan x="2064" y="278">+ maximum: ComputeObserver</tspan>
+  <tspan x="2064" y="287">+ mad: ComputeObserver</tspan>
+  <tspan x="2064" y="296">+ head: ComputeObserver</tspan>
+  <tspan x="2064" y="305">- resultDisplay: TextArea</tspan>
+  <tspan x="2064" y="314">- previousInput: String</tspan>
+  <tspan x="2064" y="323">- mainDisplay: TextArea</tspan>
+  <tspan x="2064" y="332">- DELIMITER: String= &quot; &quot;</tspan>
+  <tspan x="2064" y="341"></tspan>
+  <tspan x="2064" y="350">+ onNextClick (mouseEvent: MouseEvent )</tspan>
+  <tspan x="2064" y="359">+ onMouseClick (mouseEvent: MouseEvent )</tspan>
+  <tspan x="2064" y="368">+ onFunctionClick (mouseEvent: MouseEvent )</tspan>
+  <tspan x="2064" y="377">+ onDotClick (mouseEvent: MouseEvent )</tspan>
+  <tspan x="2064" y="386">+ onDeleteClick (mouseEvent: MouseEvent )</tspan>
+  <tspan x="2064" y="395">+ onClearClick (mouseEvent: MouseEvent )</tspan>
+  <tspan x="2064" y="404">+ initialize ()</tspan>
+  <tspan x="2064" y="413">- updateInput ()</tspan>
+  <tspan x="2064" y="422">- addToDisplay (content: String )</tspan>
+  <tspan x="2064" y="431"></tspan></text>
+ <path d="M 2055 182 C 2052 180, 2049 178, 2046 176 C 1945 114, 1590 74, 1449 60" stroke="#4e8cb9" fill="none"/>
+ <polygon points="1448,62 1443,60 1448,59 1448,62" stroke="#4e8cb9" fill="#4e8cb9"/>
+ <polygon points="2519,316 2345,316 2345,416 2519,416 2519,316" stroke="#8f8f8f" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="2353" y="328"></tspan>
+  <tspan x="2353" y="337"></tspan>
+  <tspan x="2353" y="346">javafx.application.Application</tspan>
+  <tspan x="2353" y="355"></tspan>
+  <tspan x="2353" y="364"></tspan>
+  <tspan x="2353" y="373"></tspan>
+  <tspan x="2353" y="382"></tspan>
+  <tspan x="2353" y="391"></tspan></text>
+ <polygon points="2534,628 2331,628 2331,742 2534,742 2534,628" stroke="#90c4e4" fill="#1e1e1e"/>
+ <text fill="#ffffff" font-family="Arial" font-size="9">
+  <tspan x="2339" y="640"></tspan>
+  <tspan x="2339" y="649">▲</tspan>
+  <tspan x="2339" y="658">frontend.calculator.ui.MetricsticsUI</tspan>
+  <tspan x="2339" y="667"></tspan>
+  <tspan x="2339" y="676"></tspan>
+  <tspan x="2339" y="685"></tspan>
+  <tspan x="2339" y="694">+ main (args: String[] )</tspan>
+  <tspan x="2339" y="703">+ start (stage: Stage )</tspan>
+  <tspan x="2339" y="712"></tspan></text>
+ <path d="M 2432 628 C 2432 569, 2432 479, 2432 421" stroke="#4e8cb9" fill="none"/>
+ <polygon points="2430,421 2432,416 2434,421 2430,421" stroke="#4e8cb9" fill="#4e8cb9"/>
+</svg>

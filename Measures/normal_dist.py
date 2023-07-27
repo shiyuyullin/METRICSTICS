@@ -11,7 +11,7 @@ def generate_qq_plots(data_list1, data_list2):
     expected_values1 = [(i - 0.5) / n1 for i in range(1, n1 + 1)]
     expected_values2 = [(i - 0.5) / n2 for i in range(1, n2 + 1)]
 
-    plt.figure(figsize=(12, 6))
+    plt.figure(figsize=(14, 7))
 
     plt.subplot(1, 2, 1)
     plt.scatter(expected_values1, sorted_data1)
